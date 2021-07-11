@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect to Max Schmitt</title>
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta property="og:title" content="Connect to Max Schmitt" />
+    <meta property="og:site_name" content="Max Schmitt" />
+    <meta property="og:description"
+        content="Open Source enthusiast, security researcher and full stack web developer." />
+    <meta property="og:image" content="images/profile.jpg" />
+    <meta name="description" content="Open Source enthusiast, security researcher and full stack web developer." />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(0deg, #36D1DC, #5B86E5);
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            color: white;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        a {
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container-wrapper {
+            flex: 1;
+        }
+
+        img.profile {
+            width: 128px;
+            height: 132.5px;
+            border-radius: 50%;
+        }
+
+        a.button {
+            display: block;
+            background-color: transparent;
+            margin: 20px 0;
+            font-size: 1.3rem;
+            padding: 17px;
+            text-decoration: none;
+            border: 2px solid white;
+        }
+
+        a.button:hover {
+            color: #5B86E5;
+            background-color: white;
+        }
+
+        h1.name {
+            margin: 0;
+            padding-bottom: 20px
+        }
+
+        footer {
+            text-align: center;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        footer>a {
+            text-decoration: none;
+        }
+
+        div.slogan {
+            padding-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .container-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 767px) {
+            h1.name {
+                padding-top: 20px
+            }
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34156117-12"></script>
+</head>
+
+<body>
+    <div class="container-wrapper">
+        <div class="container">
+            <h1 class="name">MA THANH HOÀNG</h1>
+            <div>
+                <img class="profile" src="me.jpg" alt="Max Schmitt">
+            </div>
+            <div class="slogan">
+                Lập trình viên IT
+            </div>
+            <a href="http://thanhhoangit.tk/" class="button">
+                <i class="fas fa-user-check"></i> My Site
+            </a>
+            <a href="https://facebook.com/mathanhhoang" class="button">
+                <i class="fab fa-facebook-square"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/thanhhoangma/" class="button">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://zalo.me/mathanhhoang" class="button">
+                <i class="fas fa-comment"></i></i> Zalo
+            </a>
+            <a href="tel:0982288543" class="button">
+                <i class="fas fa-phone"></i> Call Me
+            </a>
+            <a href="mailto:mathanhhoang2506@gmail.com" class="button">
+                    <i class="fas fa-envelope"></i> E-Mail
+                </a>
+        </div>
+    </div>
+    <footer>
+        <a href="https://github.com/mathanhhoang/">
+            GitHub
+        </a>
+    </footer>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-34156117-12');
+
+        const elements = document.getElementsByTagName("a")
+        for (let i = 0; i < elements.length; i++) {
+            const element = elements[i]
+            element.addEventListener("click", function (ev) {
+                ev.preventDefault()
+                const url = element.href
+                if (window.ga) {
+                    gtag('event', 'click', {
+                        'event_category': 'outbound',
+                        'event_label': url,
+                        'transport_type': 'beacon',
+                        'event_callback': function () {
+                            document.location.href = url;
+                        }
+                    });
+                } else {
+                    document.location.href = url;
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
